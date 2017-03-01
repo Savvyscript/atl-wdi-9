@@ -60,13 +60,33 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+>  A Task:
+     1. Task name or project.
+     2. Completion of tasks.
+     3. Time frame of completion.
+    
+    Projects
+      1. Name
+      2. personnel on the team
+      3. completion time
+
+     This app can keep a number of projects organized and time lines can be created and set for completion.
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+>   a Photo
+     1. name
+     2. location
+     3. size
+
+    An Album
+     1. name
+     2. size
+     3. dates 
+
+
 
 ### 3. Home Automation Manager
 
@@ -75,7 +95,11 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+>   Home Control
+      1. Temperature
+      2. Air Flow
+      3. Various settings for times of day 
+      4. lighting when needed
 
 ### 4. Sneaker Store
 
@@ -83,7 +107,15 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+>  Product 
+   1. name
+   2. price
+   3. availability
+
+   order status
+    1. current 
+    2. ordered
+
 
 ## Representing Abstractions in Code
 

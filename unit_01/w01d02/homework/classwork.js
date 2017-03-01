@@ -12,9 +12,11 @@
 //var resOne = true;
 var resOne;
 
+
 // 2. null || ''
 //var resTwo = falsey;
 var resTwo;
+
 
 // 3. 'false' && true
 //var resThree = true;
@@ -61,13 +63,18 @@ resSeven+=12
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
-var resEight;
-// Replace This Comment With Your Code
+var resEight; 
+      resEight = 0;
+      for(var i = 0; i <= 1857; i++) { // or i < 1857
+       resEight += i;}
+        console.log("Counting complete");
 
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
+       for( resEight = 7)
+        
 // Replace This Comment With Your Code
 
 // 10. Using whatever code you like, calculate n^n for each value from n from 1
