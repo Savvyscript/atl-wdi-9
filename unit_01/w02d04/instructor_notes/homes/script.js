@@ -1,41 +1,44 @@
 console.log('hey');
 
-$(function() {
+
   console.log('Everything is ready!');
 
   $('#addHome').removeClass('btn-danger').addClass('btn-success');
   $('.jumbotron').addClass('text-center');
 
-  var $newLink = $('<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow</a>')
 
-  $newLink.appendTo('body')
+  var $newLink = $('<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow</a>');
+  var $header = $('#header');
+  $newLink.appendTo('body');
+  
+  //   if($(event.target).is('button')) {
+  //     $(this).fadeOut(1000, function() {
+  //       $(this).remove()
+  //     });
+    
+  // }
 
-  $('#zillowLink').attr('target', '_blank');
 
-  $('#addHome').click(function($event) {
-    console.log($event);
-    console.log(this)
-  })
+  $('#homes tbody').on('click', 'tr', 'btn-danger', function(){
+    alert("Everything is ready, let's do this");
+    $(this).fadeOut(1000, function() {
+         $(this).remove();
+      });
 
-  var removeHome = function($event) {
-    console.log($event.target)
-    console.log(this)
-    if($($event.target).is('button')) {
-      $(this).fadeOut(1000, function() {
-        $(this).remove()
-      })
-    }
-  }
+  });
 
-  $('#homes tbody').on('click', 'tr', removeHome)
 
-  $('#addHome').click(function($event) {
-    var home = newHomes.pop();
 
-    var $homeTr = $(
+
+
+  $('#addHome').on('click', function() {
+       var home = newHomes.pop();
+    
+      var $homeTr = $(
+
       `
       <tr>
-        <td>$()</td>
+        <td>${home.address}</td>
         <td>${home.sf}</td>
         <td>${home.bedrooms}</td>
         <td>${home.baths}</td>
@@ -46,7 +49,8 @@ $(function() {
     );
 
     $homeTr.appendTo('tbody');
-  })
+  });
+
 
   var newHomes = [
       {address: "27569 Cedarwood Drive", sf: "2,535", bedrooms: 3, baths: 2.5, price: "$496,500"},
@@ -54,4 +58,4 @@ $(function() {
       {address: "251 Grandview Road", sf: "3,800", bedrooms: 3, baths: 2, price: "$699,900"},
       {address: "28571 Manitoba", sf: "2,960", bedrooms: 4, baths: 3.5, price: "$775,000"}
   ];
-})
+
