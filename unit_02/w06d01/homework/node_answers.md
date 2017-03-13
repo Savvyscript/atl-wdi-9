@@ -8,14 +8,17 @@
 # Library 1 Name
 
 ### Description:
-brief brief description here
+
+Express, Gulp, Request, Async, Lodash, PM2
+
+Express - 11m downloads, Gulp - 3m downoloads, Request - 0 ,  Async -  0,  Lodash - 0 ,  pm2 -  521k downloads
 
 ### Total Downloads last month:
 
 # Library 2 Name
 
 ### Description:
-brief description here
+The packets are  minimal and flexible Node.js web application frameworks that provides a robust set of features for web and mobile applications.
 
 ### Total Downloads last month:
 
