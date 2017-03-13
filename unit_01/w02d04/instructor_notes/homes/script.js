@@ -1,6 +1,5 @@
 console.log('hey');
 
-
   console.log('Everything is ready!');
 
   $('#addHome').removeClass('btn-danger').addClass('btn-success');
@@ -18,7 +17,6 @@ console.log('hey');
     
   // }
 
-
   $('#homes tbody').on('click', 'tr', 'btn-danger', function(){
     alert("Everything is ready, let's do this");
     $(this).fadeOut(1000, function() {
@@ -26,9 +24,6 @@ console.log('hey');
       });
 
   });
-
-
-
 
 
   $('#addHome').on('click', function() {
@@ -58,4 +53,9 @@ console.log('hey');
       {address: "251 Grandview Road", sf: "3,800", bedrooms: 3, baths: 2, price: "$699,900"},
       {address: "28571 Manitoba", sf: "2,960", bedrooms: 4, baths: 3.5, price: "$775,000"}
   ];
-
+  
+    newHomes.forEach(function (home) {
+        var homeInfoRowHTML = "<tr><td>" + home.address + "</td><td>" + home.sf + "</td><td>" + home.bedrooms + "</td><td>" + home.baths + "</td><td>" + home.price + "</td><td><button class='btn btn-xs btn-danger'>Remove</button></td></tr>";
+        var $homeInfoRowObject = $(homeInfoRowHTML);
+        $('#homes tbody').append($homeInfoRowObject);
+    });
