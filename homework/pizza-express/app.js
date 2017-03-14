@@ -4,6 +4,8 @@ var app     = express();
 var port    = 3000;
 var hbs     =  require('hbs');
 
+app.set("view engine", "hbs");
+app.set('views', './views');
 
 app.get('/', function(req, res) {
     res.send("Welcome to Pizza Express!");
