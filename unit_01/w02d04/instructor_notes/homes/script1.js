@@ -20,3 +20,4 @@ newhomes.foreach(function (home) {
    var homeInforowhtml = <tr><td> +
     home.address + <tr><td>  home.sf + <tr><td> + home.bedrooms + <tr><td>
     home.bath + <tr><td> home.price + <tr><td>  }
+    var 
