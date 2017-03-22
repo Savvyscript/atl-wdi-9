@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 
 var User = require("../models/user");
 var Item = require("../models/item");
@@ -20,7 +20,9 @@ router.get('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log(user);
-    res.send(user);
+    res.render('index', {
+       user: user 
+    });
   });
 });
 
@@ -39,7 +41,7 @@ router.post('/', function(req, res){
 });
 
 // USER UPDATE ROUTE
-router.patch('/:id', function(req, res){
+router.put('/:id', function(req, res){
   User.findByIdAndUpdate(req.params.id, {
     first_name: req.body.first_name,
     email: req.body.email
