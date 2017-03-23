@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router({mergeParams: true});
+var router = express.Router();
 
 var User = require("../models/user");
 var Item = require("../models/item");
@@ -10,20 +10,15 @@ router.get('/', function(req, res){
     .exec(function(err, users){
       if (err) { console.log(err); }
       console.log(users);
-      res.send(users);
+      res.render('users/index.hbs', {
+        users: users
+      });
     });
 });
 
-// USER SHOW ROUTE
-router.get('/:id', function(req, res){
-  User.findById(req.params.id)
-  .exec(function(err, user) {
-    if (err) console.log(err);
-    console.log(user);
-    res.render('index', {
-       user: user 
-    });
-  });
+// USER NEW ROUTE
+router.get('/new', function(req, res) {
+  res.render('users/new.hbs')
 });
 
 // USER CREATE ROUTE
@@ -36,7 +31,18 @@ router.post('/', function(req, res){
   user.save(function(err, user){
     if (err) { console.log(err); }
     console.log(user);
-    res.send(user);
+    res.redirect('/users')
+  });
+});
+
+// USER EDIT ROUTE
+router.get('/:id/edit', function(req, res) {
+  User.findById(req.params.id)
+  .exec(function(err, user) {
+    if (err) console.log(err);
+    res.render('users/edit.hbs', {
+      user: user
+    });
   });
 });
 
@@ -49,7 +55,21 @@ router.put('/:id', function(req, res){
   .exec(function(err, user){
     if (err) { console.log(err); }
     console.log(user);
-    res.send(user);
+    res.render('users/show.hbs', {
+      user: user
+    });
+  });
+});
+
+// USER SHOW ROUTE
+router.get('/:id', function(req, res){
+  User.findById(req.params.id)
+  .exec(function(err, user) {
+    if (err) console.log(err);
+    console.log(user);
+    res.render('users/show.hbs', {
+      user: user
+    });
   });
 });
 
@@ -59,11 +79,25 @@ router.delete('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log('User deleted!');
-    res.send("User deleted");
+    res.redirect('/users')
   });
 });
 
-// ADD A NEW ITEM
+// ITEM INDEX ROUTE
+router.get('/:id/items', function(req, res){
+  User.findById(req.params.id)
+    .exec(function(err, user){
+      if (err) { console.log(err); }
+      console.log(user.id)
+      console.log(user.items)
+      res.render('items/index.hbs', {
+        items: user.items,
+        user: user
+      });
+    });
+});
+
+// CREATE ITEM
 router.post('/:id/items', function(req, res){
   User.findById(req.params.id)
   .exec(function(err, user){
@@ -84,7 +118,7 @@ router.delete('/:userId/items/:id', function(req, res){
   })
   .exec(function(err, item){
     if (err) console.log(err);
-    res.send(item + " Item deleted");
+    res.redirect('/users')
   });
 });
 
