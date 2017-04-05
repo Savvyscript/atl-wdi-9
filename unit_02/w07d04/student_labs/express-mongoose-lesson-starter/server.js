@@ -22,11 +22,11 @@ db.on('error', function(err){
   console.log(err);
 });
 
-// Will log "database has been connected" if it successfully connects.
-db.once('open', function() {
-  console.log("database has been connected!");
-});
+// // Will log "database has been connected" if it successfully connects.
+// db.once('open', function() {
+//   console.log("database has been connected!");
+// });
 
-app.listen(4000, function(){
-  console.log("app listening on port 4000");
-});
+// app.listen(4000, function(){
+//   console.log("app listening on port 4000");
+// });

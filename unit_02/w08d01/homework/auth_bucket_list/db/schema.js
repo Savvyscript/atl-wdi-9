@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var ListSchema = new Schema({ name: String, complete: Boolean }); 
+
 
 mongoose.Promise = global.Promise;
 
@@ -36,4 +38,5 @@ var UserModel = mongoose.model('User', UserSchema);
 //export List below
 module.exports = {
   User: UserModel
+  // List: ListModel
 };

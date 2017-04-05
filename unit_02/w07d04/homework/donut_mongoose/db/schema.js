@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 // Use native promises
 mongoose.Promise = global.Promise;
 
-var ItemSchema = new Schema({
+var donutSchema = new Schema({
   name: String
 });
 

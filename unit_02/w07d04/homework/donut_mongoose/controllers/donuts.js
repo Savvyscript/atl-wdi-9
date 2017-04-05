@@ -2,14 +2,18 @@
 // REQUIREMENTS
 //======================
 // require express, router, mongoose, Donut schema
-   var newDonut = new MongooseSchema({
-   	name: String,
-	description: String,
-	img: String,
-	price: String,
-	qty: Number,
-	
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+   var newDonut = new mongoose.Schema({
+	name: String,
+    description: String,
+    img: String,
+    price: Number,
+    qty: Number
 });
+
 
 //======================
 // INDEX
@@ -70,7 +74,7 @@
 //======================
 // export router with module.exports
    module.exports = {
-  Donut: donutModel,
+  Donut: newDonut,
   
 };
 
