@@ -30,8 +30,27 @@ function PresidentsController($http){
   function deletePresident(president){
     $http
       .delete('/presidents/' + president._id)
+
+
+  function getPresidents(){
+    $http
+      .get('/presidents')
       .then(function(response){
-        removePresidentFromList(president);
+        vm.all = response.data.presidents;
+      });
+  }
+
+  function removePresidentFromList(president) {
+    var index = vm.all.indexOf(president);
+    vm.all.splice(index, 1);
+  }
+
+  function updatePresident(president){
+    $http
+      .patch('/presidents/' + president._id, president)
+      .then(function(response){
+        president.isEditing = false
+>>>>>>> c1ba13c7fa4e87d2c0547a57d23dadaff121eeef
       });
   }
 

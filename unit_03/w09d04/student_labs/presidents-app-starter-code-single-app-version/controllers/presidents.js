@@ -10,7 +10,7 @@ router.get('/', function indexAction(req, res) {
 
     res.json({presidents: presidents});
   });
- });
+
 
 router.post('/', function createAction(req, res) {
   console.log('in POST');
@@ -65,5 +65,4 @@ router.delete('/:id', function destroyAction(req, res) {
 
 
 module.exports = router;
-
 

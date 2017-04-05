@@ -1,9 +1,7 @@
 angular.module('ThePresidentsApp')
   .controller('PresidentsController', PresidentsController);
 
-  PresidentsController.$inject = ['$http'];
-  function PresidentsController(){ 
-  var vm = this;
+
 
    vm.addPresident =addPresident;
    vm.all = [];
@@ -25,7 +23,7 @@ angular.module('ThePresidentsApp')
 
   function activate() {
     loadAllPresidents();
-  }
+
 
   function addPresident(){
     console.log('Adding...');
