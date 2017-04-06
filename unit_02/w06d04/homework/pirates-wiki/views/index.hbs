@@ -1,7 +1,13 @@
 <h1>Pirate Directory</h1>
 <h2>You have {{pirateName.length}} pirates on your list.</h2>
 <ul class="pirates_list">
-  {{#each pirateName}}
+
+  {{#each pirates}}
+
+       <li>{{name}}</li>
+
+       {{each}}
+
     <li><a href="/pirates/{{@index}}">{{name}}</a></li>
   {{/each}}
 </ul>

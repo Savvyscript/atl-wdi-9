@@ -3,6 +3,7 @@
 var express  = require('express');
 var pirates  = require('../models/pirates.js');
 var router   = express.router();
+var hbs      = 
 
 router.get('/' function(req, res) {
          res.render('/index.hbs, pirates' {

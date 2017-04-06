@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router(mergeParams: true);
 
 var User = require("../models/user");
 var Item = require("../models/item");
@@ -73,12 +73,9 @@ router.delete('/:id', function(req, res) {
 });
 
 
-
-
-
 // ADD A NEW ITEM
 
-router.delete('/:id/items', function(req, res) {
+router.post('/:id/items', function(req, res) {
   User.findById(req.params.id)
   .exec(function(err, user) {
     user.items.push(new Item({name: req.body.name}));
@@ -90,7 +87,6 @@ router.delete('/:id/items', function(req, res) {
     });
   });
 });
-
 
 
 // REMOVE AN ITEM

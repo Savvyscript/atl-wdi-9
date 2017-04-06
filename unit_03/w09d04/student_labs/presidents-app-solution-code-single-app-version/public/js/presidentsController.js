@@ -50,8 +50,7 @@ function PresidentsController($http){
       .patch('/presidents/' + president._id, president)
       .then(function(response){
         president.isEditing = false
->>>>>>> c1ba13c7fa4e87d2c0547a57d23dadaff121eeef
-      });
+
   }
 
   function getPresidents(){

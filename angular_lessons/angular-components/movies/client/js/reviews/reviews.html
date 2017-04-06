@@ -1,0 +1,13 @@
+<div ng-controller="ReviewsController as reviews">
+    <h3>Reviews:</h3>
+    <ul>
+        <li ng-repeat="review in reviews.reviewList">{{review.content}}</li>
+    </ul>
+</div>
+
+<div>
+    <h3>Reviews:</h3>
+    <ul>
+        <li ng-repeat="review in $ctrl.reviewList">{{review.content}}</li>
+    </ul>
+</div>
