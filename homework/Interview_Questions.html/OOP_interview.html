@@ -1,0 +1,63 @@
+Object-Oriented Interview Questions
+
+Give three different examples of inheritance. Write these class definitions and their inheritance relationships out in Ruby.
+  A.  
+		  class LoudPerson < Person
+		  @@class_name = "LoudPerson"
+		  def say_name
+		    puts "HEY YOU, MY NAME IS #{@name.upcase}!"
+		  end
+
+  B.   
+			# class F sub-class of GF  
+			class F < GF  
+			 def initialize  
+			  puts 'In F class'  
+			 end  
+			end 
+	C.
+	       # class S sub-class of F  
+			class S < F  
+			 def initialize  
+			  puts 'In S class'  
+			 end  
+			end  
+				       		
+
+What is the difference (in your own words) between a local variable, an instance variable, and class variable.
+
+	A local variable is only used short term in its general scope. The instance variable is set within a class and can be used with many other objects in the class. Then a class variable is only used with one particular object. 
+
+
+
+What is encapsulation?
+	Encapsulation is the packing of data and functions into a single component.
+
+
+What is a private method?
+
+	A private method can be called only in the context of the current object; you cannot invoke another object's private method.
+
+
+What is the difference between a class and an object? What is the difference between a class and an instance?
+	An object is an "instance" of a class.   A class is a blueprint or prototype from which objects are created. An instance is a single and unique unit of a class.
+
+
+What is "duck typing" in Ruby?
+	Duck typing is one of the virtues of the Ruby language, it adds a lot of flexibility to the code, and allows us to use objects of different type in places where only specific methods are needed.
+
+
+
+Describe "Polymorphism"
+
+Polymorphism is the use of many types of objects from one interface. 
+
+
+
+What is a "base class", "sub-class", and "super class"?
+	   A class that is derived from another class is called a sub-class (also a derived class, extended class, or child class). The class from which the subclass is derived is called a superclass (also a base class or a parent class).
+
+
+
+
+

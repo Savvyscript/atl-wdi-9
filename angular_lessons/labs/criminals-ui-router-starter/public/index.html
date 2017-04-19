@@ -7,9 +7,23 @@
   <script src="js/app.bundle.js"></script>
 </head>
 <body ng-app="criminals">
-  <h1>Infamous Criminals</h1>
 
-  <criminals></criminals>
+      <nav>
+
+        <a ui-sref="home">Home</a> 
+        | <a ui-sref="about">About</a> 
+        | <a ui-sref="criminals">Criminals</a> 
+        | <a ui-sref="users-edit">New Criminals</a>
+
+      </nav>
+
+
+    <!--   <a ui-sref="about">Probably won't work</a> -->
+
+  <h1>Infamous Criminals</h1>
+          <ui-view></ui-view>
+
+
 
   
   <!-- For Gerry's reference -->
