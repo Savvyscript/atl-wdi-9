@@ -8,6 +8,7 @@
 </head>
 <body ng-app="criminals">
 
+
       <nav>
 
         <a ui-sref="home">Home</a> 
@@ -24,8 +25,26 @@
           <ui-view></ui-view>
 
 
+=======
+  <nav>
+    <a ui-sref="home">Home</a> |
+    <a ui-sref="about">About</a> |
 
-  
+    <a ui-sref="criminals">Criminals</a>
+=======
+    <a ui-sref="criminals">Criminals</a> |
+    <a ui-sref="criminalsNew">Add +</a>
+
+  </nav>
+
+  <h1>Infamous Criminals</h1>
+  <ui-view></ui-view>
+
+=======
+  <ui-view></ui-view>
+
+
+
   <!-- For Gerry's reference -->
   <!-- Goal: Bring this into its own page -->
   <!-- <form ng-submit="criminals.addCriminal()" id="newCriminal">
